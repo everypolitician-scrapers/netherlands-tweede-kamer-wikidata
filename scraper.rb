@@ -15,7 +15,11 @@ end
 
 def wikinames_from(url)
   noko = noko_for(url)
-  names = noko.xpath('//div[@id="mw-content-text"]//h3/following-sibling::div[@class="editmode"]/ul//a[contains(@href, "/wiki/") and not(@class="new")]/@title').map(&:text)
+  # Get all ULs in the 'Samenstelling' section
+  #   http://discomposer.com/scraping-tricks-nodes-between-other-nodes/
+  node = noko.xpath('//h2[contains(.,"Samenstelling")]').first
+  uls = node.xpath('following::ul | following::h2').slice_before { |e| e.name == 'h2' }.first
+  names = uls.map { |ul| ul.xpath('.//li//a[contains(@href, "/wiki/") and not(@class="new")]/@title').map(&:text) }.flatten
   abort 'No names' if names.count.zero?
   names
 end
