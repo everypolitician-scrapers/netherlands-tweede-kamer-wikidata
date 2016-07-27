@@ -1,0 +1,72 @@
+---
+request:
+  method: get
+  uri: https://nl.wikipedia.org/wiki/Samenstelling_Tweede_Kamer_2012-heden
+  body:
+    encoding: US-ASCII
+    string: ''
+  headers:
+    Accept-Encoding:
+    - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+    Accept:
+    - '*/*'
+    User-Agent:
+    - Ruby
+response:
+  status:
+    code: 200
+    message: OK
+  headers:
+    Date:
+    - Wed, 27 Jul 2016 16:24:31 GMT
+    Content-Type:
+    - text/html; charset=UTF-8
+    Content-Length:
+    - '19227'
+    Connection:
+    - keep-alive
+    Server:
+    - mw1274.eqiad.wmnet
+    X-Powered-By:
+    - HHVM/3.12.1
+    Vary:
+    - Accept-Encoding,Cookie,Authorization
+    X-Ua-Compatible:
+    - IE=Edge
+    Content-Language:
+    - nl
+    P3p:
+    - CP="This is not a P3P policy! See https://nl.wikipedia.org/wiki/Speciaal:CentralAutoLogin/P3P
+      for more info."
+    X-Content-Type-Options:
+    - nosniff
+    Last-Modified:
+    - Thu, 14 Jul 2016 08:52:48 GMT
+    Backend-Timing:
+    - D=72683 t=1469615323558587
+    X-Varnish:
+    - 425205041, 2363244232, 2657970424 2465469688
+    Via:
+    - 1.1 varnish, 1.1 varnish, 1.1 varnish
+    Accept-Ranges:
+    - bytes
+    Age:
+    - '21348'
+    X-Cache:
+    - cp1065 miss, cp3043 miss, cp3031 hit/3
+    Strict-Transport-Security:
+    - max-age=31536000; includeSubDomains; preload
+    Set-Cookie:
+    - GeoIP=GB:B7:Bristol:51.45:-2.58:v4; Path=/; secure; Domain=.wikipedia.org
+    - WMF-Last-Access=27-Jul-2016;Path=/;HttpOnly;secure;Expires=Sun, 28 Aug 2016
+      12:00:00 GMT
+    X-Analytics:
+    - ns=0;page_id=2940777;https=1;nocookies=1
+    X-Client-Ip:
+    - 82.37.235.135
+    Cache-Control:
+    - private, s-maxage=0, max-age=0, must-revalidate
+  body:
+    encoding: ASCII-8BIT
+  http_version: 
+recorded_at: Wed, 27 Jul 2016 16:24:31 GMT
