@@ -10,6 +10,7 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
 gem 'activesupport-inflector'
 gem 'colorize'
+gem 'combine_popolo_memberships', github: 'everypolitician/combine_popolo_memberships'
 gem 'everypolitician', github: 'everypolitician/everypolitician-ruby'
 gem 'i18n'
 gem 'mediawiki_api'

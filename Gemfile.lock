@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/everypolitician/combine_popolo_memberships.git
+  revision: 0a18a0defb11cf08f59f7f6cdc8de898227cbe89
+  specs:
+    combine_popolo_memberships (0.2.0)
+
+GIT
   remote: https://github.com/everypolitician/everypolitician-ruby.git
   revision: 20582b1512358a0e8789ea289201e37ab5f085c2
   specs:
@@ -123,6 +129,7 @@ PLATFORMS
 DEPENDENCIES
   activesupport-inflector
   colorize
+  combine_popolo_memberships!
   everypolitician!
   i18n
   mediawiki_api
@@ -140,4 +147,4 @@ RUBY VERSION
    ruby 2.3.3p222
 
 BUNDLED WITH
-   1.13.6
+   1.14.4
