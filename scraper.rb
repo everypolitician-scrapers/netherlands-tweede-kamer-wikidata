@@ -14,4 +14,18 @@ en_names = EveryPolitician::Wikidata.wikipedia_xpath(
   xpath: './/li//a[not(@class="new")]/@title',
 )
 
-EveryPolitician::Wikidata.scrape_wikidata(names: { nl: nl_names, en: en_names })
+# Find all Memberships starting since the start of the 2012 Legislature
+# This will ignore anyone who has a continuous membership from before
+# that, but at the minute it's just a fallback for people missing from
+# the lists above.
+sparq = <<EOS
+  SELECT DISTINCT ?item WHERE {
+    ?item p:P39 ?position_statement .
+    ?position_statement ps:P39 wd:Q18887908 ;
+                        pq:P580 ?start_date .
+    FILTER (?start_date >= "2012-09-01T00:00:00Z"^^xsd:dateTime) .
+  }
+EOS
+p39s = EveryPolitician::Wikidata.sparql(sparq)
+
+EveryPolitician::Wikidata.scrape_wikidata(ids: p39s, names: { nl: nl_names, en: en_names })
