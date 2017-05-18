@@ -10,7 +10,6 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
 gem 'activesupport-inflector'
 gem 'colorize'
-gem 'combine_popolo_memberships', github: 'everypolitician/combine_popolo_memberships'
 gem 'everypolitician', github: 'everypolitician/everypolitician-ruby'
 gem 'i18n'
 gem 'mediawiki_api'
@@ -21,7 +20,7 @@ gem 'rest-client'
 gem 'scraperwiki', github: 'openaustralia/scraperwiki-ruby',
                    branch: 'morph_defaults'
 gem 'sqlite_magic', github: 'openc/sqlite_magic'
-gem 'wikidata-fetcher', '>=0.19.0', github: 'everypolitician/wikidata-fetcher'
+gem 'wikidata-fetcher', '>=0.20.2', github: 'everypolitician/wikidata-fetcher'
 gem 'wikisnakker', github: 'everypolitician/wikisnakker'
 
 group :quality do
