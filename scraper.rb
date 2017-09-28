@@ -1,6 +1,13 @@
 require 'wikidata/fetcher'
 
-nl_names = EveryPolitician::Wikidata.wikipedia_xpath(
+nl_2017 = EveryPolitician::Wikidata.wikipedia_xpath(
+  url: 'https://nl.wikipedia.org/wiki/Samenstelling_Tweede_Kamer_2017-heden',
+  after: '//h2[contains(.,"Samenstelling van de Kamer")]',
+  before: '//h2[contains(.,"Wijzigingen")]',
+  xpath: './/li//a[not(@class="new")]/@title',
+)
+
+nl_2012 = EveryPolitician::Wikidata.wikipedia_xpath(
   url: 'https://nl.wikipedia.org/wiki/Samenstelling_Tweede_Kamer_2012-2017',
   after: '//h2[contains(.,"Gekozen bij de verkiezingen van 12 september 2012")]',
   before: '//span[@id="Bijzonderheden"]',
@@ -28,4 +35,4 @@ sparq = <<EOS
 EOS
 p39s = EveryPolitician::Wikidata.sparql(sparq)
 
-EveryPolitician::Wikidata.scrape_wikidata(ids: p39s, names: { nl: nl_names, en: en_names })
+EveryPolitician::Wikidata.scrape_wikidata(ids: p39s, names: { nl: nl_2012 | nl_2017, en: en_names })
