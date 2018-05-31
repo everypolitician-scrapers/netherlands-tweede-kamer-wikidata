@@ -4,7 +4,7 @@ nl_2017 = EveryPolitician::Wikidata.wikipedia_xpath(
   url: 'https://nl.wikipedia.org/wiki/Samenstelling_Tweede_Kamer_2017-heden',
   after: '//h2[contains(.,"Samenstelling van de Kamer")]',
   before: '//h2[contains(.,"Wijzigingen")]',
-  xpath: './/li//a[not(@class="new")]/@title',
+  xpath: './/table//tr[td]//td[1]//a[not(@class="new")]/@title',
 )
 
 nl_2012 = EveryPolitician::Wikidata.wikipedia_xpath(
